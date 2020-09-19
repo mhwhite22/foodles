@@ -7,6 +7,8 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import Meal, Recipe
+
 
 # Create your views here.
 
@@ -36,4 +38,11 @@ def signup(request):
   return render(request, 'registration/signup.html', context)
 
 class RecipeList(ListView):
-    pass
+  model = Recipe
+
+class RecipeDetail(DetailView):
+  model = Recipe
+
+class RecipeCreate(LoginRequiredMixin, CreateView):
+  model = Recipe
+  fields = '__all__'
