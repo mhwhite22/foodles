@@ -46,3 +46,9 @@ class RecipeDetail(DetailView):
 class RecipeCreate(LoginRequiredMixin, CreateView):
   model = Recipe
   fields = '__all__'
+
+class MealList(ListView):
+  model = Meal
+
+class MealDetail(DetailView):
+  model = Meal
