@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <header class="navbar-fixed">
@@ -29,12 +31,14 @@
                 </ul>
             </div>
         </nav>
+      </header>
         <main class="container">
             {% block content %}
             {% endblock %}
         </main>
           <footer class="page-footer">
-           <div class="right">All Rights Reserved, &copy; 2019 Foodles &nbsp;</div>
+            <div class="right"> Not your average recipe book &nbsp;</div>
+            <br><div class="right"> All Rights Reserved, &copy; 2020 Foodles&trade; &nbsp;</div>
         </footer>
 </body>
 </html>
