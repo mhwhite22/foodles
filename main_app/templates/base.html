@@ -21,13 +21,13 @@
                 <ul class="right">
                     <li><a href="{% url 'about' %}">About</a></li>
                   {% if user.is_authenticated %}
-                    <li><a href="{% url 'meals_index' %}">Meals</a></li>
+                    <li><a href="{% url 'meals_index' %}"><i class="fab fa-delicious"></i> Meals</a></li>
                     <li><a href="{% url 'recipes_create' %}"><i class="fas fa-book-open"></i> Add Recipe</a></li>
                     <li><a href="{% url 'recipes_index' %}"><i class="fas fa-book"></i>  Recipes</a></li>
-                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
                   {% else %}
                     <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    <li><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Log In</a></li>
                   {% endif %}
                 </ul>
             </div>
