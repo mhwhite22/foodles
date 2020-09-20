@@ -13,12 +13,10 @@
 </head>
 <body>
     <header class="navbar-fixed">
-        <nav>
+        <nav class="navbar">
             <div class="nav-wrapper">
-                <ul> 
-                    <li class="nav-item"><a href="/" >Home</a></li>
-                </ul>
-                <ul class="right">
+                <ul class="navbar-nav"> 
+                    <li class="nav-item home"><a href="/" >Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'about' %}"><i class="fas fa-info-circle"></i><span class="link-text"> About</span></a></li>
                   {% if user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'recipes_index' %}"><i class="fas fa-book"></i><span class="link-text"> Recipes</span></a></li>
