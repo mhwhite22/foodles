@@ -52,6 +52,6 @@ class Meal(models.Model):
         return str(self.id)
 
     def get_absolute_url(self):
-        return reverse('detail', kwargs={'meal_id': self.id})
+        return reverse('detail', kwargs={'pk': self.id})
 
 

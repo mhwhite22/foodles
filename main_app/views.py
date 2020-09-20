@@ -47,6 +47,13 @@ class RecipeCreate(LoginRequiredMixin, CreateView):
   model = Recipe
   fields = ['name', 'source', 'main_ingredient', 'instructions']
 
+class MealList(ListView):
+  model = Meal
+
+class MealDetail(DetailView):
+  model = Meal
+  fields = ['name', 'source', 'main_ingredient', 'instructions']
+
 class RecipeUpdate(LoginRequiredMixin, UpdateView):
   model = Recipe
   fields = ['name', 'source', 'main_ingredient', 'instructions']
