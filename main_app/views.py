@@ -45,10 +45,7 @@ class RecipeDetail(DetailView):
 
 class RecipeCreate(LoginRequiredMixin, CreateView):
   model = Recipe
-
   fields = ['name', 'source', 'main_ingredient', 'instructions']
-
-  fields = '__all__'
 
 class RecipeUpdate(LoginRequiredMixin, UpdateView):
   model = Recipe

@@ -1,11 +1,23 @@
+:root {
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  /* --text-primary: ;
+  --text-secondary: ;
+  --bg-primary: ;
+  --bg-secondary: ; */
+}
+
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 main {
   flex: 1 0 auto;
+  margin-left: 5rem;
 }
 
 footer.page-footer {
