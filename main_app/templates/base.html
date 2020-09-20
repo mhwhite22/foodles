@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/8aea6a0231.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="navbar-fixed">
@@ -21,8 +22,8 @@
                     <li><a href="{% url 'about' %}">About</a></li>
                   {% if user.is_authenticated %}
                     <li><a href="{% url 'meals_index' %}">Meals</a></li>
-                    <li><a href="{% url 'recipes_create' %}">Add Recipe</a></li>
-                    <li><a href="{% url 'recipes_index' %}">Recipes</a></li>
+                    <li><a href="{% url 'recipes_create' %}"><i class="fas fa-book-open"></i> Add Recipe</a></li>
+                    <li><a href="{% url 'recipes_index' %}"><i class="fas fa-book"></i>  Recipes</a></li>
                     <li><a href="{% url 'logout' %}">Log Out</a></li>
                   {% else %}
                     <li><a href="{% url 'signup' %}">Sign Up</a></li>
