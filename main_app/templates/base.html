@@ -15,19 +15,19 @@
     <header class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
-                <ul>
-                    <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Home</a></li>
+                <ul> 
+                    <li class="nav-item"><a href="/" >Home</a></li>
                 </ul>
                 <ul class="right">
-                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}"><i class="fas fa-info-circle"></i><span class="link-text"> About</span></a></li>
                   {% if user.is_authenticated %}
-                    <li><a href="{% url 'meals_index' %}"><i class="fab fa-delicious"></i> Meals</a></li>
-                    <li><a href="{% url 'recipes_create' %}"><i class="fas fa-book-open"></i> Add Recipe</a></li>
-                    <li><a href="{% url 'recipes_index' %}"><i class="fas fa-book"></i>  Recipes</a></li>
-                    <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'recipes_index' %}"><i class="fas fa-book"></i><span class="link-text"> Recipes</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'recipes_create' %}"><i class="fas fa-book-open"></i><span class="link-text"> Add Recipe</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'meals_index' %}"><i class="fab fa-delicious"></i><span class="link-text"> Meals</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i><span class="link-text"> Log Out</span></a></li>
                   {% else %}
-                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                    <li><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Log In</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'signup' %}"><span class="link-text">Sign Up</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i><span class="link-text"> Log In</span></a></li>
                   {% endif %}
                 </ul>
             </div>
