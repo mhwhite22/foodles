@@ -45,7 +45,15 @@ class RecipeDetail(DetailView):
 
 class RecipeCreate(LoginRequiredMixin, CreateView):
   model = Recipe
-  fields = '__all__'
+  fields = ['name', 'source', 'main_ingredient', 'instructions']
+
+class RecipeUpdate(LoginRequiredMixin, UpdateView):
+  model = Recipe
+  fields = ['name', 'source', 'main_ingredient', 'instructions']
+
+class RecipeDelete(LoginRequiredMixin, DeleteView):
+  model = Recipe
+  success_url = '/recipe/'
 
 class MealList(ListView):
   model = Meal
