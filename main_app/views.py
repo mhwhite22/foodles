@@ -46,6 +46,9 @@ class RecipeDetail(DetailView):
 class RecipeCreate(LoginRequiredMixin, CreateView):
   model = Recipe
   fields = ['name', 'source', 'main_ingredient', 'instructions']
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 class RecipeUpdate(LoginRequiredMixin, UpdateView):
   model = Recipe
