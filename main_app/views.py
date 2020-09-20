@@ -52,3 +52,13 @@ class MealList(ListView):
 
 class MealDetail(DetailView):
   model = Meal
+
+  fields = ['name', 'source', 'main_ingredient', 'instructions']
+
+class RecipeUpdate(LoginRequiredMixin, UpdateView):
+  model = Recipe
+  fields = ['name', 'source', 'main_ingredient', 'instructions']
+
+class RecipeDelete(LoginRequiredMixin, DeleteView):
+  model = Recipe
+  success_url = '/recipe/'
