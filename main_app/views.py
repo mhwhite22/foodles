@@ -45,6 +45,7 @@ class RecipeDetail(DetailView):
 
 class RecipeCreate(LoginRequiredMixin, CreateView):
   model = Recipe
+<<<<<<< HEAD
   fields = ['name', 'source', 'main_ingredient', 'instructions']
 
 class MealList(ListView):
@@ -52,7 +53,12 @@ class MealList(ListView):
 
 class MealDetail(DetailView):
   model = Meal
+=======
+>>>>>>> master
   fields = ['name', 'source', 'main_ingredient', 'instructions']
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 class RecipeUpdate(LoginRequiredMixin, UpdateView):
   model = Recipe
@@ -61,3 +67,9 @@ class RecipeUpdate(LoginRequiredMixin, UpdateView):
 class RecipeDelete(LoginRequiredMixin, DeleteView):
   model = Recipe
   success_url = '/recipe/'
+
+class MealList(ListView):
+  model = Meal
+
+class MealDetail(DetailView):
+  model = Meal
