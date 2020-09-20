@@ -15,6 +15,18 @@ body {
   padding: 0;
 }
 
+body::-webkit-scrollbar {
+  width: .25rem;
+}
+
+/* body::-webkit-scrollbar-track {
+background: black;  
+}
+
+body::-webkit-scrollbar-track {
+  background: coral;
+} */
+
 main {
   flex: 1 0 auto;
   margin-left: 5rem;
@@ -25,6 +37,94 @@ footer.page-footer {
   text-align: right;
 }
 
-.page-footer, .nav-wrapper {
+.page-footer, .nav-wrapper, nav {
   background-color: green;
+}
+
+.navbar {
+  transition: width 200ms ease;
+  position: fixed;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-item {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* .nav-item:first-child {
+  margin-top: auto;
+} */
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  text-decoration: none;
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+.nav-link i {
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+
+/* desktop view */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+  
+  .navbar:hover {
+    width: 16rem;
+  }
+  
+  .navbar:hover .link-text {
+    display: inline;
+  }
+}
+
+/* mobile view */
+@media only screen and (max-width: 600px) {
+  .home {
+    display: none;
+  }
+  
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+  
+  .nav-link {
+    justify-content: center;
+
+  }
+
+  main {
+    margin: 0;
+  }
+
+  footer.page-footer {
+    display: none;
+  }
 }
