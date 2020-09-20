@@ -1,6 +1,6 @@
 # Foodles
 
-Foodles is a recipe app that allows you to document your culinary creations and reminds you when it time to try them again
+Foodles is a recipe app that allows you to document your culinary creations and reminds you when it time to try them again.
 
 # Screenshots:
 
