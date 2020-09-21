@@ -64,6 +64,7 @@ class MealList(ListView):
 class MealDetail(DetailView):
   model = Meal
 
+
 class MealCreate(LoginRequiredMixin, CreateView):
   model = Meal
   fields = ['date', 'recipe']
@@ -71,4 +72,10 @@ class MealCreate(LoginRequiredMixin, CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
   success_url = '/meals/'
+
+
+def recipes_favorite(request, recipe_id):
+  current_recipe = Recipe.objects.get(id=recipe_id)
+  current_recipe.favorite = True
+  return redirect('recipe_detail.html', recipe_id=recipe_id)
 

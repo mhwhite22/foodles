@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <h1>Here's where that food detail gone be living</h1>
 <a href="{% url 'meals_create' %}">Add A New Meal</a>
+
+<h1>List of Meals</h1>
+
 {% for meal in meal_list %}
 <div class="card">
   <div class="card-content">
