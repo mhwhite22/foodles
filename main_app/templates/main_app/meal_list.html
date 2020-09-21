@@ -11,9 +11,7 @@
 <div class="card">
   <div class="card-content">
       <span class="card-title">Meal on {{meal.date}}</span>
-      {% for recipe in meal.recipe_set.all %}
-        <p>{{recipe.get_name_display}}</p>
-    {% endfor %}
+      <p>{{ meal.recipe_display }}</p>
   </div>
 </div>
 {% endfor %}
