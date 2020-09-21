@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>My Favorite Recipes</h1>
-{% for recipe in recipe_list %}
+{% for recipe in favorites %}
   <a href="{% url 'recipes_detail' recipe.id %}">
     <div class="card">
         <div class="card-content">
