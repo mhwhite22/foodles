@@ -80,8 +80,7 @@ class MealDelete(LoginRequiredMixin, DeleteView):
   model = Meal
   success_url = '/meals/'
 
-
-def recipes_favorite(request, recipe_id):
+def recipes_make_favorite(request, recipe_id):
   current_recipe = Recipe.objects.get(id=recipe_id)
   current_recipe.favorite = True
   return redirect('recipe_detail.html', recipe_id=recipe_id)
