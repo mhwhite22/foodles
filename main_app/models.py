@@ -16,6 +16,7 @@ MAIN_INGREDIENT = (
     ('L', 'Lamb'),
     ('N', 'Pasta'),
     ('V', 'Vegetarian'),
+    ('O', 'Other'),
 )
 
 class Recipe(models.Model):
