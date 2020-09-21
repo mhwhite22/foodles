@@ -73,6 +73,14 @@ class MealCreate(LoginRequiredMixin, CreateView):
     return super().form_valid(form)
   success_url = '/meals/'
 
+class MealUpdate(LoginRequiredMixin, UpdateView):
+  model = Meal
+  fields = ['date', 'recipe']
+
+class MealDelete(LoginRequiredMixin, DeleteView):
+  model = Meal
+  fields = '__all__'
+
 
 def recipes_favorite(request, recipe_id):
   current_recipe = Recipe.objects.get(id=recipe_id)
