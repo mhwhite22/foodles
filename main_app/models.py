@@ -47,4 +47,6 @@ class Meal(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'pk': self.id})
 
+    def recipe_peek(self):
+        return self.recipe.values_list('name')
 
