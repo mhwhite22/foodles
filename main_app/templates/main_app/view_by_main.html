@@ -1,19 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
+<h1>View Recipes By Main Ingredient</h1>
+<h4></h4>
 
-<h1>Recipe List</h1>
-<div id="wrapper">
-  <a href="{% url 'view_favorites' %}">Favorite Recipes</a>
-  <a href="{% url 'view_by_main' %}">Recipes By Main Ingredient</a>
-  <a href="">Original Recipes</a>
-</div>
-{% for recipe in recipe_list %}
+{% for recipe in favorites %}
   <a href="{% url 'recipes_detail' recipe.id %}">
     <div class="card">
         <div class="card-content">
             <span class="card-title">{{ recipe.name }}</span>
             <p>Source: {{ recipe.source|truncatechars:25 }}</p>
-            <!-- I think we want to put a condition here - like "if favorite, display something, else leave this one out" -->
             <p>Main Ingredient: {{ recipe.get_main_ingredient_display }}</p>
             <p>Instructions: {{ recipe.instructions|truncatechars:50 }}</p>
             {% if recipe.favorite %}
@@ -25,5 +20,8 @@
   </a>
 {% endfor %}
 
-
+<script>
+    var selectEl = document.getElementById('id_main_ingredient');
+    M.FormSelect.init(selectEl);
+  </script>
 {% endblock %}
