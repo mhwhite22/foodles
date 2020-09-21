@@ -6,10 +6,10 @@ from datetime import date
 # Create your models here.
 
 
-FAVORITES = (
-    ('N', 'Not'),
-    ('F', 'Favorite')
-)
+# FAVORITES = (
+#     ('N', 'Not'),
+#     ('F', 'Favorite')
+# )
 
 MAIN_INGREDIENT = (
     ('C', 'Chicken'),
@@ -26,11 +26,7 @@ class Recipe(models.Model):
     name = models.CharField(max_length=100)
     source = models.CharField(max_length=100)
     instructions = models.TextField()
-    favorite = models.CharField(
-        max_length=1,
-        choices=FAVORITES,
-        default=FAVORITES[0][0]
-    )
+    favorite = models.BooleanField(default=True)
     main_ingredient = models.CharField(
         max_length=1,
         choices=MAIN_INGREDIENT,
