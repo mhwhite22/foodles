@@ -6,6 +6,7 @@ from datetime import date
 # Create your models here.
 
 
+
 MAIN_INGREDIENT = (
     ('C', 'Chicken'),
     ('P', 'Pork'),

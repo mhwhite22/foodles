@@ -15,9 +15,14 @@
             <p>Source: {{ recipe.source }}</p>
             <!-- I think we want to put a condition here - like "if favorite, display something, else leave this one out" -->
             <p>Main Ingredient: {{ recipe.main_ingredient }}</p>
+
+            <p>Favorite Recipe</p>
+            {{ endif }}
+
             {% if recipe.favorite %}
             <p>Favorite</p>
             {% endif %}
+
         </div>
     </div>
   </a>
