@@ -87,3 +87,9 @@ def recipes_favorite(request, recipe_id):
   current_recipe.favorite = True
   return redirect('recipe_detail.html', recipe_id=recipe_id)
 
+class FavoriteList(LoginRequiredMixin, ListView):
+  model = Recipe
+  context_object_name = 'favorites'
+  queryset = Recipe.objects.filter(favorite='True')
+
+
