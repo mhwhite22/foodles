@@ -2,7 +2,11 @@
 {% block content %}
 
 <h1>Recipe List</h1>
-
+<div id="wrapper">
+  <a href="">Favorite Recipes</a>
+  <a href="">Recipes By Main Ingredient</a>
+  <a href="">Original Recipes</a>
+</div>
 {% for recipe in recipe_list %}
   <a href="{% url 'recipes_detail' recipe.id %}">
     <div class="card">

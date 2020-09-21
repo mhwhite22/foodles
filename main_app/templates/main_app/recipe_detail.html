@@ -2,7 +2,15 @@
 {% block content %}
 
 <h1>Recipe Details</h1>
-
+<div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ recipe.name }}</span>
+      <p>Main Ingredient: {{ recpie.main_ingredient }}</p>
+      <p>Source: {{ recipe.source }}</p>
+      <p>Instructions: {{ recipe.instructions|truncatechars:50 }}</p>
+    
+     
+    </div>
 <div class="card-action">
     <a href="{% url 'recipes_update' recipe.id %}">Edit</a>
     <a href="{% url 'recipes_delete' recipe.id %}">Delete</a>
