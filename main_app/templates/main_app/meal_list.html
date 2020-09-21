@@ -2,16 +2,14 @@
 
 {% block content %}
 
-<h1>Here's where that food detail gone be living</h1>
+<h1>My Recent Meals</h1>
 <a href="{% url 'meals_create' %}">Add A New Meal</a>
-
-<h1>List of Meals</h1>
 
 {% for meal in meal_list %}
 <div class="card">
   <div class="card-content">
       <span class="card-title">Meal on {{meal.date}}</span>
-      <p>{{ meal.recipe_display }}</p>
+      <p>{{ meal.recipe.get_name_display }}</p>
   </div>
 </div>
 {% endfor %}
