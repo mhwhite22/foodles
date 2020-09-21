@@ -100,7 +100,24 @@ footer.page-footer {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  postion:relative;
   border-radius: 16px;
+  padding: 1.5rem;
+  transition: .2s;
+}
+
+.card:hover{
+  transform: translateY(-1rem);
+}
+
+.card:hover~.card {
+  transform: translateX(130px);
+}
+
+.card:not(:first-child) {
+  margin-top: -130px;
 }
 
 /* mobile view */
