@@ -12,7 +12,7 @@ Foodles is a recipe app that allows you to document your culinary creations and 
 * CSS
 * Python
 * Django
-* Postgres SQL
+* PostresSQL
 * Materialize
 
 # Getting Started:
