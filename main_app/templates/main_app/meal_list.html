@@ -10,7 +10,9 @@
 <div class="card">
   <div class="card-content">
       <span class="card-title">Meal on {{meal.date}}</span>
-      <p>{{ meal.recipe_peek }}</p>
+      {% for recipe in meal.recipe_peek %}
+      <p>{{ recipe.name }}</p>
+      {% endfor %}
   </div>
 </div>
 </a>
