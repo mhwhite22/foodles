@@ -14,8 +14,8 @@
             <span class="card-title">{{ recipe.name }}</span>
             <p>Source: {{ recipe.source }}</p>
             <!-- I think we want to put a condition here - like "if favorite, display something, else leave this one out" -->
-            <p>Main Ingredient: {{ recipe.main_ingredient }}</p>
-
+            <p>Main Ingredient: {{ recipe.get_main_ingredient_display }}</p>
+            <p>Instructions: {{ recipe.instructions|truncatechars:50 }}</p>
             <p>Favorite Recipe</p>
             {{ endif }}
 
