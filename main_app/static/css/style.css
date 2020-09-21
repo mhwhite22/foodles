@@ -99,6 +99,10 @@ footer.page-footer {
   }
 }
 
+.card {
+  border-radius: 16px;
+}
+
 /* mobile view */
 @media only screen and (max-width: 600px) {
   .home {
