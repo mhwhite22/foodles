@@ -64,7 +64,6 @@ class MealList(ListView):
 class MealDetail(DetailView):
   model = Meal
 
-
 class MealCreate(LoginRequiredMixin, CreateView):
   model = Meal
   fields = ['date', 'recipe']
@@ -79,7 +78,7 @@ class MealUpdate(LoginRequiredMixin, UpdateView):
 
 class MealDelete(LoginRequiredMixin, DeleteView):
   model = Meal
-  fields = '__all__'
+  success_url = '/meals/'
 
 
 def recipes_favorite(request, recipe_id):
