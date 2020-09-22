@@ -5,6 +5,8 @@
   --text-secondary: ;
   --bg-primary: ;
   --bg-secondary: ; */
+  background-color: #dfdcd4;
+  color: #69645b;
 }
 
 body {
@@ -102,10 +104,14 @@ footer.page-footer {
 .card {
   display: flex;
   flex-direction: column;
-  postion:relative;
+  position: relative;
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 1.0rem;
+  color: #9d9994;
+  min-width: 250px;
   transition: .2s;
+  background: #2d2926;
+  box-shadow: -1rem;
 }
 
 .card:hover{
@@ -148,4 +154,12 @@ footer.page-footer {
   footer.page-footer {
     display: none;
   }
+}
+
+.btn {
+  background-color: #c69214;
+}
+
+a {
+  color: whitesmoke;
 }
