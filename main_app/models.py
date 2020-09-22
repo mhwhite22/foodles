@@ -59,3 +59,5 @@ class Meal(models.Model):
     def recipe_peek(self):
         return self.recipe.values('name')
 
+
+
