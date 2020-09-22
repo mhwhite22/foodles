@@ -1,11 +1,11 @@
 :root {
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
-  /* --text-primary: ;
+  /* --text-primary: #69645b;
   --text-secondary: ;
-  --bg-primary: ;
-  --bg-secondary: ; */
-  background-color: #dfdcd4;
+  --bg-primary: #dfdcd4;
+  --bg-secondary: #88b04b; */
+  background-color: #2d2926;
   color: #69645b;
 }
 
@@ -37,10 +37,11 @@ main {
 footer.page-footer {
   padding-top: 0;
   text-align: right;
+  bottom: 0;
 }
 
 .page-footer, .nav-wrapper, nav {
-  background-color: green;
+  background-color: #88b04b;
 }
 
 .navbar {
@@ -107,10 +108,10 @@ footer.page-footer {
   position: relative;
   border-radius: 16px;
   padding: 1.0rem;
-  color: #9d9994;
+  color: #2d2926;
+  background: #dfdcd4;
   min-width: 250px;
   transition: .2s;
-  background: #2d2926;
   box-shadow: -1rem;
 }
 
