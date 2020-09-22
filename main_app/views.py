@@ -84,7 +84,7 @@ def recipes_make_favorite(request, pk):
   current_recipe = Recipe.objects.get(id=pk)
   current_recipe.favorite = True
   current_recipe.save()
-  return redirect('recipes_detail', pk=pk)
+  return redirect('view_favorites')
 
 class FavoriteList(LoginRequiredMixin, ListView):
   context_object_name = 'favorites'
