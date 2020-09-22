@@ -99,5 +99,4 @@ class MainList(LoginRequiredMixin, ListView):
   queryset = Recipe.objects.all()
 
   def get_queryset(self):
-    self.main_ingredient = get_object_or_404(Recipe, name=self.kwargs['recipe'])
-    return Recipe.objects.filter(main_ingredient=self.main_ingredient)
+    pass
