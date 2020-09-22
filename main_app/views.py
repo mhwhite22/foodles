@@ -7,7 +7,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Meal, Recipe
+from .models import Meal, Recipe, MAIN_INGREDIENT
 
 
 # Create your views here.
@@ -80,16 +80,23 @@ class MealDelete(LoginRequiredMixin, DeleteView):
   model = Meal
   success_url = '/meals/'
 
-
-def recipes_favorite(request, recipe_id):
+def recipes_make_favorite(request, recipe_id):
   current_recipe = Recipe.objects.get(id=recipe_id)
   current_recipe.favorite = True
   return redirect('recipe_detail.html', recipe_id=recipe_id)
 
 class FavoriteList(LoginRequiredMixin, ListView):
-  template_name = 'main_app/view_favorites.html'
-  model = Recipe
   context_object_name = 'favorites'
-  queryset = Recipe.objects.filter(favorite='True')
+  queryset = Recipe.objects.filter(favorite=True)
+  template_name = 'main_app/view_favorites.html'
 
+class MainList(LoginRequiredMixin, ListView):
+  template_name = 'view_by_main.html'
+  from django import forms
+  choice_field = MAIN_INGREDIENT
+  context_object_name = 'main'
+  queryset = Recipe.objects.all()
 
+  def get_queryset(self):
+    self.main_ingredient = get_object_or_404(Recipe, name=self.kwargs['recipe'])
+    return Recipe.objects.filter(main_ingredient=self.main_ingredient)
