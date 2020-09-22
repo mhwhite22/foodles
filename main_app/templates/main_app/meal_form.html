@@ -23,9 +23,12 @@
       setDefaultDate: true,
       autoClose: true
     });
-  
+    var selectElement = document.getElementById('id_meal_type');
+    M.FormSelect.init(selectElement);
     // initialize the meal select
     var selectEl = document.getElementById('id_recipe');
     M.FormSelect.init(selectEl);
   </script>
+
+
 {% endblock %}

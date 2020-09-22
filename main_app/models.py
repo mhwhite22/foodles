@@ -5,7 +5,11 @@ from datetime import date
 
 # Create your models here.
 
-
+MEAL_TYPE = (
+    ('B', 'Breakfast'),
+    ('L', 'Lunch'),
+    ('D', 'Dinner'),
+)
 
 MAIN_INGREDIENT = (
     ('C', 'Chicken'),
@@ -40,6 +44,11 @@ class Recipe(models.Model):
 class Meal(models.Model):
     date = models.DateField('meal date')
     recipe = models.ManyToManyField(Recipe)
+    meal_type = models.CharField(
+        max_length=1,
+        choices=MEAL_TYPE,
+        default=MEAL_TYPE[0][0]
+    )
 
     def __str__(self):
         return str(self.id)
