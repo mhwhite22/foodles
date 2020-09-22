@@ -66,7 +66,7 @@ class MealDetail(DetailView):
 
 class MealCreate(LoginRequiredMixin, CreateView):
   model = Meal
-  fields = ['date', 'recipe']
+  fields = ['date', 'recipe', 'meal_type']
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
@@ -74,7 +74,7 @@ class MealCreate(LoginRequiredMixin, CreateView):
 
 class MealUpdate(LoginRequiredMixin, UpdateView):
   model = Meal
-  fields = ['date', 'recipe']
+  fields = ['date', 'recipe', 'meal_type']
 
 class MealDelete(LoginRequiredMixin, DeleteView):
   model = Meal
