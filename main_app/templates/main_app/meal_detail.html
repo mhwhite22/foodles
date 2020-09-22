@@ -15,8 +15,8 @@
       {% endfor %}
     </div>
 <div class="card-action">
-    <a href="{% url 'meals_update' meal.id %}">Edit</a>
-    <a href="{% url 'meals_delete' meal.id %}">Delete</a>
+    <a class="btn-small" href="{% url 'meals_update' meal.id %}">Edit</a>
+    <a class="btn-small" href="{% url 'meals_delete' meal.id %}">Delete</a>
     <br><br>
   </div>
 
