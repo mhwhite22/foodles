@@ -4,7 +4,7 @@
 <h1>Log In</h1>
 
 <!-- Add the login form -->
-<form method="post" action="{% url 'login' %}">
+<form class="django-form" method="post" action="{% url 'login' %}">
   {% csrf_token %}
   {{ form.as_p }}
   <input type="submit" class="btn" value="login">

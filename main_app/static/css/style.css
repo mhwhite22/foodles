@@ -17,6 +17,14 @@ body {
   padding: 0;
 }
 
+input {
+  color: #dfdcd4;
+}
+
+h1 {
+  color: #dfdcd4;
+}
+
 body::-webkit-scrollbar {
   width: .25rem;
 }
@@ -159,6 +167,10 @@ footer.page-footer {
 
 .btn {
   background-color: #c69214;
+}
+
+.btn:hover {
+  background-color: #69645b;
 }
 
 a {
