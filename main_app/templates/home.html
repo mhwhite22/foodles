@@ -2,5 +2,9 @@
 {% block content %}
 
 <h1>Foodles Home Page</h1>
-
+{% if user.is_authenticated %}
+<h2>Take a look around</h2>
+{% else %}
+<h2>Please Log In!</h2>
+{% endif %}
 {% endblock %}
