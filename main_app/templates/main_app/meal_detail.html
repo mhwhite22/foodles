@@ -4,12 +4,12 @@
 <h1>Meal Details</h1>
 <div class="card">
     <div class="card-content">
-      <span class="card-title">{{ meal.date }}</span>
+      <span class="card-title">{{ meal.date }} recipe id? {{meal}} </span>
       <h4>{{ meal.get_meal_type_display }}</h4>
       <h6>Recipes:</h6>
-      {% for m in meal.recipe_peek %}
+      {% for recipe in meal.recipe_peek %}
       <ul>
-        <li><a href="">{{ m.name }}</a></li>
+        <li><a href="/recipe/{{ recipe.id }}">{{ recipe.name }}</a></li>
       </ul>
 
       {% endfor %}

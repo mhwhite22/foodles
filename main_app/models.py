@@ -57,5 +57,5 @@ class Meal(models.Model):
         return reverse('meals_detail', kwargs={'pk': self.id})
 
     def recipe_peek(self):
-        return self.recipe.values('name')
-
+        return self.recipe.values('name', 'id')
+    
