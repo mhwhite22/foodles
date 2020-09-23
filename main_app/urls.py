@@ -9,6 +9,7 @@ urlpatterns = [
     path('recipe/create/', views.RecipeCreate.as_view(), name='recipes_create'),
     path('recipe/favorites/', views.FavoriteList.as_view(), name='view_favorites'),
     path('recipe/main/', views.MainList.as_view(), name='view_by_main'),
+    path('recipe/main/sort', views.IngredientView, name='main_sort'),
     path('recipe/<int:pk>/update/', views.RecipeUpdate.as_view(), name='recipes_update'),
     path('recipe/<int:pk>/delete/', views.RecipeDelete.as_view(), name='recipes_delete'),
     path('recipe/<int:pk>/make_favorite', views.recipes_make_favorite, name='recipes_make_favorite'),

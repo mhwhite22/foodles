@@ -1,5 +1,7 @@
 import uuid
 import boto3
+import django_filters
+from django.shortcuts import get_object_or_404
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
@@ -94,14 +96,14 @@ class FavoriteList(LoginRequiredMixin, ListView):
   template_name = 'main_app/view_favorites.html'
 
 class MainList(LoginRequiredMixin, ListView):
-  template_name = 'view_by_main.html'
-  from django import forms
-  choice_field = MAIN_INGREDIENT
-  context_object_name = 'main'
   queryset = Recipe.objects.all()
+  template_name = 'main_app/view_by_main.html'
 
-  def get_queryset(self):
-    pass
+def IngredientView(request):
+  ingredient = chr(request.body[-1])
+  recipes = Recipe.objects.filter(main_ingredient=ingredient)
+  print(ingredient)
+  return render(request, 'main_app/main_sort.html', {'recipes':recipes})
 
 def add_photo(request, recipe_id):
     photo_file = request.FILES.get('photo-file', None)
@@ -115,3 +117,4 @@ def add_photo(request, recipe_id):
         except:
             print('An error occurred uploading file to S3')
     return redirect('recipes_detail', pk=recipe_id)
+

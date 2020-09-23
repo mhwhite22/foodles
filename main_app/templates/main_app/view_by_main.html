@@ -1,9 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>View Recipes By Main Ingredient</h1>
-<h4></h4>
+<h2>View Recipes By Main Ingredient</h2>
+<form action='/recipe/main/sort' method="POST">
+    {% csrf_token %}
+    <div class="input-field col s12">
+    <select name="main_ingredient">
+        <option value="C">Chicken</option>
+        <option value="P">Pork</option>
+        <option value="B">Beef</option>
+        <option value="F">Fish</option>
+        <option value="S">Shellfish</option>
+        <option value="L">Lamb</option>
+        <option value="P">Pasta</option>
+        <option value="V">Vegetarian</option>
+        <option value="O">Other</option>
+    </select>
+    <label>Select Main Ingredient</label>
+    </div>
+    <input type="submit" />
+  </form>
 
-{% for recipe in favorites %}
+
+{% for recipe in recipes %}
   <a href="{% url 'recipes_detail' recipe.id %}">
     <div class="card">
         <div class="card-content">
@@ -21,7 +39,9 @@
 {% endfor %}
 
 <script>
-    var selectEl = document.getElementById('id_main_ingredient');
-    M.FormSelect.init(selectEl);
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+  });
   </script>
 {% endblock %}
