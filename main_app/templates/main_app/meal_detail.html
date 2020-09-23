@@ -4,7 +4,7 @@
 <h1>Meal Details</h1>
 <div class="card">
     <div class="card-content">
-      <span class="card-title">{{ meal.date }} recipe id? {{meal}} </span>
+      <span class="card-title"><h4>{{ meal.date }}</h4></span>
       <h4>{{ meal.get_meal_type_display }}</h4>
       <h6>Recipes:</h6>
       {% for recipe in meal.recipe_peek %}
