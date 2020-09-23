@@ -28,6 +28,8 @@ Pitch Deck => [Pitch-Deck](https://docs.google.com/presentation/d/1yKKEjfVX1aSrk
 
 # Next Steps:
 
-* Add photos of dishes
-* View recipes by main ingredient
 * View recipes by cuisine type
+* Add search feature
+
+
+
