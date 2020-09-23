@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2>View Recipes By Main Ingredient</h2>
-<form action="" method="POST">
+<form action='/recipe/main/sort' method="POST">
     {% csrf_token %}
     <div class="input-field col s12">
     <select name="main_ingredient">
@@ -21,7 +21,7 @@
   </form>
 
 
-{% for recipe in favorites %}
+{% for recipe in recipes %}
   <a href="{% url 'recipes_detail' recipe.id %}">
     <div class="card">
         <div class="card-content">
@@ -41,7 +41,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, options);
+    var instances = M.FormSelect.init(elems);
   });
   </script>
 {% endblock %}

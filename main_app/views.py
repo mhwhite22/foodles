@@ -105,22 +105,11 @@ class MainIngredientFilterSet(LoginRequiredMixin,django_filters.FilterSet):
 
 class MainList(LoginRequiredMixin, ListView):
   queryset = Recipe.objects.all()
-  # context_object_name = 'recipes'
-  # queryset = Recipe.objects.filter(main_ingredient='')
   template_name = 'main_app/view_by_main.html'
 
+def IngredientView(request):
+  ingredient = chr(request.body[-1])
+  recipes = Recipe.objects.filter(main_ingredient=ingredient)
+  print(ingredient)
+  return render(request, 'main_app/main_sort.html', {'recipes':recipes})
 
-    # filterset_class = MainIngredientFilterSet
-
-    # def get_queryset(self):
-    #     # self.Recipe = get_object_or_404(Recipe, name=self.kwargs['main_ingredient'])
-    #     # return Recipe.objects.filter(main_ingredient=self.main_ingredient)
-    #     print(self.filterset_class)
-    #     # queryset = super().get_queryset()
-    #     # self.filterset = self.filterset_class(self.request.GET, queryset=queryset)
-    #     # return self.filterset.qs.distinct()
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['filterset'] = self.filterset
-    #     return context
