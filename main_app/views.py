@@ -14,7 +14,6 @@ from .models import Meal, Recipe, MAIN_INGREDIENT
 # Create your views here.
 
 def home(request):
-  messages.add_message(request, messages.INFO, 'Hey, Try that Breakfast Burrito Again Big Dawg!')
   return render(request, 'home.html')
 
 def about(request):
