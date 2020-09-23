@@ -10,13 +10,13 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Meal, Recipe, MAIN_INGREDIENT
+from .models import Meal, Recipe, MAIN_INGREDIENT, Photo
 
+S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
+BUCKET = 'foodles-1'
 
-# Create your views here.
 
 def home(request):
-  messages.add_message(request, messages.INFO, 'Hey, Try that Breakfast Burrito Again Big Dawg!')
   return render(request, 'home.html')
 
 def about(request):
@@ -95,14 +95,6 @@ class FavoriteList(LoginRequiredMixin, ListView):
   queryset = Recipe.objects.filter(favorite=True)
   template_name = 'main_app/view_favorites.html'
 
-
-
-class MainIngredientFilterSet(LoginRequiredMixin,django_filters.FilterSet):
-  class Meta:
-    model = Recipe
-    fields = ['main_ingredient']
-
-
 class MainList(LoginRequiredMixin, ListView):
   queryset = Recipe.objects.all()
   template_name = 'main_app/view_by_main.html'
@@ -112,4 +104,17 @@ def IngredientView(request):
   recipes = Recipe.objects.filter(main_ingredient=ingredient)
   print(ingredient)
   return render(request, 'main_app/main_sort.html', {'recipes':recipes})
+
+def add_photo(request, recipe_id):
+    photo_file = request.FILES.get('photo-file', None)
+    if photo_file:
+        s3 = boto3.client('s3')
+        key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
+        try:
+            s3.upload_fileobj(photo_file, BUCKET, key)
+            url = f"{S3_BASE_URL}{BUCKET}/{key}"
+            Photo.objects.create(url=url, recipe_id=recipe_id)
+        except:
+            print('An error occurred uploading file to S3')
+    return redirect('recipes_detail', pk=recipe_id)
 
