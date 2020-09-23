@@ -119,4 +119,4 @@ def add_photo(request, recipe_id):
             Photo.objects.create(url=url, recipe_id=recipe_id)
         except:
             print('An error occurred uploading file to S3')
-    return redirect('recipes_detail', recipe_id=recipe_id)
+    return redirect('recipes_detail', pk=recipe_id)
