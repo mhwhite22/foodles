@@ -8,8 +8,6 @@
       <p>Main Ingredient: {{ recipe.get_main_ingredient_display }}</p>                        
       <p>Source: <a href="{{ recipe.source }}">{{recipe.source|truncatechars:20}}</a></p>
       <p>Instructions: {{ recipe.instructions }}</p>
-    
-     
     </div>
 <div class="card-action">
     <a class="btn-small" href="{% url 'recipes_update' recipe.id %}">Edit</a>
@@ -20,6 +18,17 @@
       <input type="submit" value="Add to Favorites!" class="btn">
     </form>
   </div>
+{% for photo in recipe.photo_set.all %}
+  <img class="responsive-img card-panel" src="{{photo.url}}">
+{% empty %}
+  <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+{% endfor %}
+  <form action="{% url 'add_photo' recipe.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+    {% csrf_token %}
+    <input type="file" name="photo-file">
+    <br><br>
+    <input type="submit" class="btn" value="Upload Photo">
+  </form>
 
 
 {% endblock %}
