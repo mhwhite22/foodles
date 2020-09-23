@@ -185,5 +185,13 @@ a {
 }
 
 textarea {
-  color: #dfdcd4;
+  background-color: #dfdcd4;
+}
+
+.select-dropdown  {
+  background-color: #dfdcd4;
+}
+
+.dropdown-content li>span {
+  color: #2d2926;
 }
