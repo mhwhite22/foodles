@@ -1,25 +1,18 @@
-{% extends 'base.html' %}
-{% block content %}
-
-{% if recipes.count %}
-{% for recipe in recipes.all %}
+{% extends 'base.html' %} {% block content %} {% if recipes.count %} {% for
+recipe in recipes.all %}
 <a href="{% url 'recipes_detail' recipe.id %}">
-    <div class="card">
-        <div class="card-content">
-            <span class="card-title">{{ recipe.name }}</span>
-            <p>Source: {{ recipe.source|truncatechars:25 }}</p>
-            <p>Main Ingredient: {{ recipe.get_main_ingredient_display }}</p>
-            <p>Instructions: {{ recipe.instructions|truncatechars:50 }}</p>
-            {% if recipe.favorite %}
-            <p>Favorite</p>
-            {% endif %}
-
-        </div>
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ recipe.name }}</span>
+      <p>Source: {{ recipe.source|truncatechars:25 }}</p>
+      <p>Main Ingredient: {{ recipe.get_main_ingredient_display }}</p>
+      <p>Instructions: {{ recipe.instructions|truncatechars:50 }}</p>
+      {% if recipe.favorite %}
+      <p>Favorite</p>
+      {% endif %}
     </div>
-  </a>
-{% endfor %}
-{% else %}
+  </div>
+</a>
+{% endfor %} {% else %}
 <h1>no recipes</h1>
-{% endif %}
-
-{% endblock %}
+{% endif %} {% endblock %}

@@ -1,23 +1,23 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <h1>Meal Details</h1>
 <div class="card">
-    <div class="card-content">
-      <span class="card-title"><h4>{{ meal.date }}</h4></span>
-      <h4>{{ meal.get_meal_type_display }}</h4>
-      <h6>Recipes:</h6>
-      {% for recipe in meal.recipe_peek %}
-      <ul>
-        <li><a href="/recipe/{{ recipe.id }}">{{ recipe.name }}</a></li>
-      </ul>
+  <div class="card-content">
+    <span class="card-title"><h4>{{ meal.date }}</h4></span>
+    <h4>{{ meal.get_meal_type_display }}</h4>
+    <h6>Recipes:</h6>
+    {% for recipe in meal.recipe_peek %}
+    <ul>
+      <li><a href="/recipe/{{ recipe.id }}">{{ recipe.name }}</a></li>
+    </ul>
 
-      {% endfor %}
-    </div>
-<div class="card-action">
+    {% endfor %}
+  </div>
+  <div class="card-action">
     <a class="btn-small" href="{% url 'meals_update' meal.id %}">Edit</a>
     <a class="btn-small" href="{% url 'meals_delete' meal.id %}">Delete</a>
-    <br><br>
+    <br /><br />
   </div>
 
-{% endblock %}
+  {% endblock %}
+</div>
