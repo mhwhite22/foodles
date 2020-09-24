@@ -13,6 +13,7 @@ urlpatterns = [
     path('recipe/<int:pk>/update/', views.RecipeUpdate.as_view(), name='recipes_update'),
     path('recipe/<int:pk>/delete/', views.RecipeDelete.as_view(), name='recipes_delete'),
     path('recipe/<int:pk>/make_favorite', views.recipes_make_favorite, name='recipes_make_favorite'),
+    path('recipe/<int:pk>/remove_favorite', views.recipes_remove_favorite, name='recipes_remove_favorite'),
     path('recipe/<int:recipe_id>/add_photo/', views.add_photo, name='add_photo'),
     path('accounts/signup/', views.signup, name='signup'),
     path('meals/', views.MealList.as_view(), name='meals_index'),

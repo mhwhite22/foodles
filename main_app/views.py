@@ -89,6 +89,12 @@ def recipes_make_favorite(request, pk):
   current_recipe.save()
   return redirect('view_favorites')
 
+def recipes_remove_favorite(request, pk):
+  current_recipe = Recipe.objects.get(id=pk)
+  current_recipe.favorite = False
+  current_recipe.save()
+  return redirect('/recipe/')
+
 class FavoriteList(LoginRequiredMixin, ListView):
   context_object_name = 'favorites'
   queryset = Recipe.objects.filter(favorite=True)

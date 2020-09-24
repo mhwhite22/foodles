@@ -13,11 +13,19 @@
     <a class="btn-small" href="{% url 'recipes_update' recipe.id %}">Edit</a>
     <a class="btn-small delete" href="{% url 'recipes_delete' recipe.id %}">Delete</a>
     <br><br>
+    {% if recipe.favorite == False %}
     <form action="{% url 'recipes_make_favorite' recipe.id %}" method="post">
       {% csrf_token %}
       <input type="submit" value="Add to Favorites!" class="btn">
     </form>
   </div>
+  {% else %}
+  <form action="{% url 'recipes_remove_favorite' recipe.id %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Remove Favorite" class="btn">
+  </form>
+</div>
+{% endif %}
 {% for photo in recipe.photo_set.all %}
   <img class="responsive-img card-panel" src="{{photo.url}}">
 {% empty %}
