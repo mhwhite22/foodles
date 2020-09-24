@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div class="center-align">
 <h1>Welcome to Foodles</h1>
 {% if user.is_authenticated %}
 <h2>Take a look around</h2>
 {% else %}
 <h2>Please Log In!</h2>
-{% endif %}
 <br><br>
 <a href="{% url 'signup' %}" class="btn" class="home-btn">Sign Up</a>
 <a href="{% url 'login' %}" class="btn" class="home-btn">Login In</a>
+</div>
+{% endif %}
 
 {% endblock %}
