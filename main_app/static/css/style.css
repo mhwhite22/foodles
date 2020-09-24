@@ -40,6 +40,7 @@ body::-webkit-scrollbar-track {
 main {
   flex: 1 0 auto;
   margin-left: 5rem;
+  margin-bottom: auto;
 }
 
 footer.page-footer {
@@ -125,6 +126,10 @@ footer.page-footer {
   min-width: 250px;
   transition: .2s;
   box-shadow: -1rem;
+}
+
+.responsive-img, .card-panel {
+  border-radius: 16px;
 }
 
 .card-list:hover{

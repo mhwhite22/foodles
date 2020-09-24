@@ -2,10 +2,9 @@
 {% block content %}
 
 <h1>Recipe List</h1>
-<div id="wrapper">
+<div class="center-align" id="wrapper">
   <a class="btn-small" href="{% url 'view_favorites' %}">Favorite Recipes</a>
   <a class="btn-small" href="{% url 'view_by_main' %}">Recipes By Main Ingredient</a>
-  <a class="btn-small" href="">Original Recipes</a>
 </div>
 {% for recipe in recipe_list %}
   <a href="{% url 'recipes_detail' recipe.id %}">
