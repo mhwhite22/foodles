@@ -7,4 +7,8 @@
 {% else %}
 <h2>Please Log In!</h2>
 {% endif %}
+<br><br>
+<a href="{% url 'signup' %}" class="btn" class="home-btn">Sign Up</a>
+<a href="{% url 'login' %}" class="btn" class="home-btn">Login In</a>
+
 {% endblock %}
