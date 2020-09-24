@@ -4,10 +4,9 @@ Foodles is a recipe app that allows you to document your culinary creations and 
 
 # Screenshots:
 
-![about](main_app/static/images/about.png)
-![recipe-index](main_app/static/images/recipe-index.png)
-![meal-index](main_app/static/images/meals-index.png)
-![nav-bar](main_app/static/images/nav-bar.png)
+![landing-page](main_app/static/images/landing-page.png)
+![recipe-detail](main_app/static/images/recipe-detail.png)
+![navbar](main_app/static/images/navbar.png)
 
 # Technologies Used:
 
