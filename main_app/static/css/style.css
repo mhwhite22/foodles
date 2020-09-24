@@ -40,6 +40,7 @@ body::-webkit-scrollbar-track {
 main {
   flex: 1 0 auto;
   margin-left: 5rem;
+  margin-bottom: auto;
 }
 
 footer.page-footer {
